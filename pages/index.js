@@ -3,9 +3,34 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getCookie, removeCookies, setCookies } from 'cookies-next'
 //import { connectToDatabase } from "../util/mongodb";
+import {useState, useRef, useEffect} from "react"
+import { useRouter } from 'next/router'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 export default function Home({data}) {
+  
+  
+  const [number, setNumber] = useState("")
+  const numberRef = useRef()
+  const router = useRouter()
+  
+  const handleSubmit = async () => {
+    console.log(number.length)
+    if (number.length != 10) {
+      numberRef.current.style.color = "#f25c4b"
+    } 
+   if (number.length === 10) {
+      router.push(`/shedule?num=${number}`)
+    }
+  }
+  useEffect(() => {
+     if (number && number.length === 10){
+      numberRef.current.style.color = "#111827"
+    }
+     if (number.length > 10) {
+      setNumber(number.substring(0,10))
+    }
+  },[number])
   
   return (
     <>
@@ -36,13 +61,13 @@ Most <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple
   <span className="shadow-[0_0_1rem_rgba(0,25,49,0.1)] inline-flex items-center px-3 text-sm text-slate-700 bg-slate-200 border border-r-0 rounded-l-sm">
     +91
   </span>
-  <input type="number" className="shadow-[0_0_1rem_rgba(0,25,49,0.1)] rounded-none rounded-r-sm bg-white text-gray-900 focus:ring-blue-500 block flex-1 min-w-0 w-full text-sm border-slate-300 p-4 flex:outline-none" placeholder="Enter Mobile Number"/>
+  <input ref={numberRef} onChange={(e) => setNumber(e.target.value)} value={number} type="number" className="shadow-[0_0_1rem_rgba(0,25,49,0.1)] rounded-none rounded-r-sm bg-white text-gray-900 focus:ring-blue-500 block flex-1 min-w-0 w-full text-sm border-slate-300 p-4 flex:outline-none" placeholder="Enter Mobile Number"/>
 </div>
-<Link href="/shedule">
-<button className="mt-5 p-3 text-white shadow-[0_0_.4rem_rgba(0,25,49,0.071)] bg-gradient-to-r from-[#7a6ded] to-purple-500 rounded font-bold text-xl">
+
+<button onClick={handleSubmit} className="mt-5 p-3 text-white shadow-[0_0_.4rem_rgba(0,25,49,0.071)] bg-gradient-to-r from-[#7a6ded] to-purple-500 rounded font-bold text-xl">
 Sedule Now
 </button>
-</Link>
+
 </div>
   </div>
   

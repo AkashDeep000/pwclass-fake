@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  .errorInput {
+    @apply placeholder:italic placeholder:text-red-400 text-red-400;
+  }
   body {
     @apply bg-slate-50;
     /* These are technically the same, but use both */
