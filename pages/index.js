@@ -17,7 +17,8 @@ export default function Home({data}) {
   const handleSubmit = async () => {
     console.log(number.length)
     if (number.length != 10) {
-      numberRef.current.style.color = "#f25c4b"
+      numberRef.current.style.border = "2px solid #fecdd3"
+      numberRef.current.style.padding = "0.875rem"
     } 
    if (number.length === 10) {
       router.push(`/shedule?num=${number}`)
@@ -25,7 +26,8 @@ export default function Home({data}) {
   }
   useEffect(() => {
      if (number && number.length === 10){
-      numberRef.current.style.color = "#111827"
+      numberRef.current.style.border = "none"
+      numberRef.current.style.padding = "1rem"
     }
      if (number.length > 10) {
       setNumber(number.substring(0,10))
@@ -44,6 +46,7 @@ export default function Home({data}) {
 src="/student2.png"
 width="800"
 height="288.6"
+alt=""
 priority
 />
 </div>
@@ -61,7 +64,7 @@ Most <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple
   <span className="shadow-[0_0_1rem_rgba(0,25,49,0.1)] inline-flex items-center px-3 text-sm text-slate-700 bg-slate-200 border border-r-0 rounded-l-sm">
     +91
   </span>
-  <input ref={numberRef} onChange={(e) => setNumber(e.target.value)} value={number} type="number" className="shadow-[0_0_1rem_rgba(0,25,49,0.1)] rounded-none rounded-r-sm bg-white text-gray-900 focus:ring-blue-500 block flex-1 min-w-0 w-full text-sm border-slate-300 p-4 flex:outline-none" placeholder="Enter Mobile Number"/>
+  <input ref={numberRef} onChange={(e) => setNumber(e.target.value)} value={number} type="number" className="focus:border-2 focus:p-3.5 focus:border-slate-300 focus:outline-0 shadow-[0_0_1rem_rgba(0,25,49,0.1)] rounded-none rounded-r-sm bg-white text-gray-900 block flex-1 min-w-0 w-full text-sm border-slate-300 p-4 flex:outline-none" placeholder="Enter Mobile Number"/>
 </div>
 
 <button onClick={handleSubmit} className="mt-5 p-3 text-white shadow-[0_0_.4rem_rgba(0,25,49,0.071)] bg-gradient-to-r from-[#7a6ded] to-purple-500 rounded font-bold text-xl">
@@ -79,13 +82,14 @@ Sedule Now
 src="/math.jpg"
 width="1200"
 height="770"
+alt=""
 priority
 />
 </div>
 
 <h2 className="p-8 pt-12 text-2xl font-bold  text-slate-700 ">
 Crack your <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">JEE / NEET</span>
-<br/>exam with your<br/>highly Passionate Techer.
+<br/>exam with your<br/>highly Passionate Teacher.
 </h2>
 
 
@@ -101,6 +105,7 @@ Crack your <span className="text-transparent bg-clip-text bg-gradient-to-r from-
 src="/student1.jpg"
 width="1200"
 height="900"
+alt=""
 priority
 />
 </div>
@@ -127,6 +132,7 @@ Book Mow
 src="/online.jpg"
 width="1200"
 height="900"
+alt=""
 priority
 />
 </div>

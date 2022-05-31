@@ -14,26 +14,18 @@ export default function Home({data}) {
     <div className=" w-full">
  <div className="grid place-items-center">
 
-<h2 className="pt-6 text-3xl font-bold  text-slate-700 ">
-Contact Us
-</h2>
-<p className="text-slate-700 px-6 py-4 text-xl w-11/12 max-w-[50ch]">
-<span className="text-slate-700 text-2xl font-bold">
-PWclass
-</span>
-<br/>
-<br/>
-10th mile (near bus-stand)
-<br/>Shibrampur, Namkhana
-<br/>South 24 Parganas
-<br />West Bengal, 743357
-<br/>
-<br/>
-<span className="font-bold">contact.pwclass@gmail.com</span>
-<br/>
-<span className="font-bold">+917548945778</span>
-
-</p>
+<div className="text-slate-700 text-xl w-11/12 pt-8">
+<Image
+src="/under-constraction.jpg"
+height={800}
+width={1200}
+alt=""
+priority
+/>
+</div>
+  <h4 className="p-8 text-2xl font-bold  text-slate-700 text-transparent bg-clip-text bg-clip-text bg-gradient-to-l from-rose-500 to-pink-600">
+  This Page is Under Costraction
+</h4>
   </div>  
   </div>
   <Footer/>

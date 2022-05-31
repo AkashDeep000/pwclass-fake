@@ -27,19 +27,26 @@ export default function Home({data}) {
   const submited = checkCookies("submited")
   
   const handleSubmit = async () => {
-    console.log(number.length)
-    if (number.length != 10) {
-      numberRef.current.style.color = "#f25c4b"
+    console.log(number?.length)
+    if (number?.length != 10) {
+      
+      
+      numberRef.current.style.border = "2px solid #fecdd3"
+      numberRef.current.style.padding = "0.875rem"
     } 
-    if (name.length < 4) {
-      nameRef.current.style.color = "#f25c4b"
+    if (!name) {
+      
+      nameRef.current.style.border = "2px solid #fecdd3"
+      nameRef.current.style.padding = "0.875rem"
     } 
-    if (addr.length  < 4) {
-      addrRef.current.style.color = "#f25c4b"
+    if (!addr) {
+      
+      addrRef.current.style.border = "2px solid #fecdd3"
+      addrRef.current.style.padding = "0.875rem"
     } 
     
     
-    if (number.length === 10 && submitState == "completed") {
+    if (number?.length === 10 && addr && name && submitState != "completed") {
       setSubmitState("loading")
       const submit = await axios({
           method: 'post',
@@ -59,23 +66,27 @@ export default function Home({data}) {
     
   }
   useEffect(() => {
-     if (number && number.length === 10){
-      numberRef.current.style.color = "#111827"
+     if (number && number?.length === 10){
+      
+      numberRef.current.style.border = "none"
+      numberRef.current.style.padding = "1rem"
     }
     if (number?.length > 10) {
-      setNumber(number.substring(0,10))
+      setNumber(number?.substring(0,10))
     }
   },[number])
   
   useEffect(() => {
-     if (name && name?.length > 4){
-      nameRef.current.style.color = "#111827"
+     if (name){
+      nameRef.current.style.border = "none"
+      nameRef.current.style.padding = "1rem"
     }
   },[name])
   
   useEffect(() => {
-     if (addr && addr?.length > 4){
-      addrRef.current.style.color = "#111827"
+     if (addr){
+      addrRef.current.style.border = "none"
+      addrRef.current.style.padding = "1rem"
     }
   },[addr])
   
@@ -83,7 +94,7 @@ export default function Home({data}) {
     if (submited) {
       setIsSubmited(true)
     }
-  },[number,name, addr, submited])
+  },[number,name, addr, setIsSubmited, submited])
   
   
   return (
@@ -96,7 +107,7 @@ export default function Home({data}) {
     <div className="max-w-[100ch] grid px-8 pt-10 md:grid-cols-[40%,60%] center place-items-center">
 
   
-  <h4 className=" w-full text-xl md:text-3xl font-bold  text-slate-700 text-transparent bg-clip-text bg-gradient-to-r to-[#7a6ded] from-purple-500">Fill up the form bellow we will call you soon.
+  <h4 className=" w-full text-xl md:text-3xl font-bold  text-slate-700 text-transparent bg-clip-text bg-gradient-to-r to-[#7a6ded] from-purple-500">Fill up the form bellow. We will call you shortly.
 </h4>
 <div className="py-4">
 
@@ -104,10 +115,10 @@ export default function Home({data}) {
   <span className="shadow-[0_0_1rem_rgba(0,25,49,0.1)] inline-flex items-center px-3 text-sm text-slate-700 bg-slate-200 border border-r-0 rounded-l-sm">
     +91
   </span>
-  <input ref={numberRef} onChange={(e) => setNumber(e.target.value)} value={number} id="number" type="number" className="shadow-[0_0_1rem_rgba(0,25,49,0.1)] rounded-none rounded-r-sm bg-white text-gray-900 focus:ring-blue-500 block flex-1 min-w-0 w-full text-sm border-slate-300 p-4 flex:outline-none" placeholder="Enter Mobile Number"/>
+  <input ref={numberRef} onChange={(e) => setNumber(e.target.value)} value={number} id="number" type="number" className="focus:border-2 focus:p-3.5 focus:border-slate-300 focus:outline-0 shadow-[0_0_1rem_rgba(0,25,49,0.1)] rounded-none rounded-r-sm bg-white text-gray-900 block flex-1 min-w-0 w-full text-sm border-slate-300 p-4 flex:outline-none" placeholder="Enter Mobile Number"/>
 </div>
-  <input ref={nameRef} onChange={(e) => setName(e.target.value)} value={name} type="text" className="mt-6 shadow-[0_0_1rem_rgba(0,25,49,0.1)] rounded-none rounded-r-sm bg-white text-gray-900 focus:ring-blue-500 block flex-1 min-w-0 w-full text-sm border-slate-300 p-4 flex:outline-none" placeholder="Enter Your Full Name"/>
-  <input ref={addrRef} onChange={(e) => setAddr(e.target.value)} value={addr} type="address" className="mt-6 shadow-[0_0_1rem_rgba(0,25,49,0.1)] rounded-none rounded-r-sm bg-white text-gray-900 focus:ring-blue-500 block flex-1 min-w-0 w-full text-sm border-slate-300 p-4 flex:outline-none text-slate-700" placeholder="Enter Your Your Address"/>
+  <input ref={nameRef} onChange={(e) => setName(e.target.value)} value={name} type="text" className="mt-6 focus:border-2 focus:p-3.5 focus:border-slate-300 focus:outline-0 shadow-[0_0_1rem_rgba(0,25,49,0.1)] rounded-none rounded-r-sm bg-white text-gray-900 block flex-1 min-w-0 w-full text-sm border-slate-300 p-4 flex:outline-none" placeholder="Enter Your Full Name"/>
+  <input ref={addrRef} onChange={(e) => setAddr(e.target.value)} value={addr} type="address" className="focus:border-2 focus:p-3.5 focus:border-slate-300 focus:outline-0 mt-6 shadow-[0_0_1rem_rgba(0,25,49,0.1)] rounded-none rounded-r-sm bg-white text-gray-900 focus:ring-blue-500 block flex-1 min-w-0 w-full text-sm border-slate-300 p-4 flex:outline-none text-slate-700" placeholder="Enter Your Your Address"/>
 
 <button onClick={handleSubmit} className="mt-5 p-3 text-white shadow-[0_0_.4rem_rgba(0,25,49,0.071)] bg-gradient-to-r from-[#7a6ded] to-purple-500 rounded font-bold text-xl text-centet w-36 md:w-40">
 {submitState == "loading" && submitState != "failed"?
@@ -125,8 +136,10 @@ export default function Home({data}) {
 }
 
 </button>
-  <h4 className=" w-full pt-4 text-lg md:text-3xl  text-slate-700 text-transparent bg-clip-text bg-gradient-to-r to-[#7a6ded] from-purple-500">You have already Submited the form we will contact you soom.
+{isSubmited ?
+  <h4 className=" w-full pt-4 text-lg md:text-3xl  text-slate-700 text-transparent bg-clip-text bg-gradient-to-r to-[#7a6ded] from-purple-500">You have Submited the form. We will contact you shortly.
 </h4>
+: null}
 </div>
   </div>
 

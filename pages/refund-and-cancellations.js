@@ -26,13 +26,13 @@ We can cancel your purchacing of our cource if a request is made within 24 hours
 <h2 className="text-2xl py-4 font-bold">
 Refund Policy
 </h2>
-All Test Preparation course producuct come with a demo class (online or offline). Within the 7 days of purchacing our course, you can refund the course in case you do not like it.
+All Test Preparation course producuct come with a demo class (online or offline). Within the 10 days of purchacing our course, you can refund the course in case you do not like it.
 
-A Refund Request will be deemed valid only if it is made through an email to contact.pwclass@gmail.com or by calling us on +91-7548945778 within 7 days from purchace.
+A Refund Request will be deemed valid only if it is made through an email to contact.pwclass@gmail.com or by calling us on +91-7548945778 within 10 days from purchace.
 <br/>
-No Refund will be provided after 15 days from purchace.
+No Refund will be provided after 10 days from purchace.
 <br/>
-Refunds shall be made to bank account within 10 working days of receipt of products.
+Refunds shall be made to bank account within 7 working days of receipt of products.
 </p>
   </div>  
   </div>

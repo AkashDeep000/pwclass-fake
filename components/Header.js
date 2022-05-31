@@ -14,12 +14,12 @@ const [isSubscribed, setIsSubscribed] = useState(false)
   
 const handleLoginClick = () => {
   if (!isLogin) {
-    router.push("/login")
+    router.push("/signin")
   } else {
     removeCookies('access_token')
     removeCookies('number')
     removeCookies('isSubscribed')
-    router.push("/login")
+    router.push("/signin")
   }
 }
 /*

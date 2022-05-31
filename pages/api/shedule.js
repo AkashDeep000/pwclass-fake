@@ -12,9 +12,7 @@ export default async function handler(req, res) {
  if (number) {
    
 		 const { db } = await connectToDatabase(); 
-		for (let i = 0; i < 100000; i++){
-		  9877666*i
-		}
+		
      const submit = await db.collection('shedule')
          .insertOne({
            number: number,
