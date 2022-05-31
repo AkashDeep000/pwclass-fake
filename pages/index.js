@@ -36,7 +36,8 @@ export default function Home({data}) {
   
   return (
     <>
-    <div className="grid grid-rows-[auto_1fr_auto] h-[100vh]">
+  
+    <div className="grid grid-rows-[auto_1fr_auto] min-h-full">
     <Header/>
     <div>
  <div className="grid place-items-center">
