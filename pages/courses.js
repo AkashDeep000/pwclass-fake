@@ -65,7 +65,7 @@ Online
 </div>
 
 <div></div>
-<Link href="/shedule">
+<Link href="/schedule">
 <button className="p-3 text-white shadow-[0_0_.4rem_rgba(0,25,49,0.071)] bg-gradient-to-r from-[#7a6ded] to-purple-500 rounded font-bold">
 Book Now
 </button>
@@ -113,7 +113,7 @@ Online
 </div>
 
 <div></div>
-<Link href="/shedule">
+<Link href="/schedule">
 <button className="p-3 text-white shadow-[0_0_.4rem_rgba(0,25,49,0.071)] bg-gradient-to-r from-[#7a6ded] to-purple-500 rounded font-bold">
 Book Now
 </button>

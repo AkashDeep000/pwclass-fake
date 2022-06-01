@@ -17,14 +17,14 @@ export default function Home({data}) {
   const [number, setNumber] = useState(num)
   const [name, setName] = useState("")
   const [addr, setAddr] = useState("")
-  const [isSubmited, setIsSubmited] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
   const [submitState, setSubmitState] = useState("idle")
   
   const numberRef = useRef()
   const addrRef = useRef()
   const nameRef = useRef()
   
-  const submited = checkCookies("submited")
+  const Submitted = checkCookies("Submitted")
   
   const handleSubmit = async () => {
     console.log(number?.length)
@@ -56,7 +56,7 @@ export default function Home({data}) {
       console.log(data)
       if (data.status == 200) {
         setSubmitState("completed")
-        setCookies("submited", true)
+        setCookies("Submitted", true)
       } else {
        setSubmitState("failed") 
       }
@@ -91,10 +91,10 @@ export default function Home({data}) {
   },[addr])
   
   useEffect(() => {
-    if (submited) {
-      setIsSubmited(true)
+    if (Submitted) {
+      setIsSubmitted(true)
     }
-  },[number,name, addr, setIsSubmited, submited])
+  },[number,name, addr, setIsSubmitted, Submitted])
   
   
   return (
@@ -118,7 +118,7 @@ export default function Home({data}) {
   <input ref={numberRef} onChange={(e) => setNumber(e.target.value)} value={number} id="number" type="number" className="focus:border-2 focus:p-3.5 focus:border-slate-300 focus:outline-0 shadow-[0_0_1rem_rgba(0,25,49,0.1)] rounded-none rounded-r-sm bg-white text-gray-900 block flex-1 min-w-0 w-full text-sm border-slate-300 p-4 flex:outline-none" placeholder="Enter Mobile Number"/>
 </div>
   <input ref={nameRef} onChange={(e) => setName(e.target.value)} value={name} type="text" className="mt-6 focus:border-2 focus:p-3.5 focus:border-slate-300 focus:outline-0 shadow-[0_0_1rem_rgba(0,25,49,0.1)] rounded-none rounded-r-sm bg-white text-gray-900 block flex-1 min-w-0 w-full text-sm border-slate-300 p-4 flex:outline-none" placeholder="Enter Your Full Name"/>
-  <input ref={addrRef} onChange={(e) => setAddr(e.target.value)} value={addr} type="address" className="focus:border-2 focus:p-3.5 focus:border-slate-300 focus:outline-0 mt-6 shadow-[0_0_1rem_rgba(0,25,49,0.1)] rounded-none rounded-r-sm bg-white text-gray-900 focus:ring-blue-500 block flex-1 min-w-0 w-full text-sm border-slate-300 p-4 flex:outline-none text-slate-700" placeholder="Enter Your Your Address"/>
+  <input ref={addrRef} onChange={(e) => setAddr(e.target.value)} value={addr} type="address" className="focus:border-2 focus:p-3.5 focus:border-slate-300 focus:outline-0 mt-6 shadow-[0_0_1rem_rgba(0,25,49,0.1)] rounded-none rounded-r-sm bg-white text-gray-900 focus:ring-blue-500 block flex-1 min-w-0 w-full text-sm border-slate-300 p-4 flex:outline-none text-slate-700" placeholder="Enter Your Address"/>
 
 <button onClick={handleSubmit} className="mt-5 p-3 text-white shadow-[0_0_.4rem_rgba(0,25,49,0.071)] bg-gradient-to-r from-[#7a6ded] to-purple-500 rounded font-bold text-xl text-centet w-36 md:w-40">
 {submitState == "loading" && submitState != "failed"?
@@ -129,14 +129,14 @@ export default function Home({data}) {
 : submitState == "failed" ?
 "Try Again"
 : submitState == "completed" ?
-"Submited"
-: isSubmited ?
+"Submitted"
+: isSubmitted ?
 "Re-Submit"
 : "Submit"
 }
 
 </button>
-{isSubmited ?
+{isSubmitted ?
   <h4 className=" w-full pt-4 text-lg md:text-3xl  text-slate-700 text-transparent bg-clip-text bg-gradient-to-r to-[#7a6ded] from-purple-500">You have Submitted the form. We will contact you shortly.
 </h4>
 : null}
