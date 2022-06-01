@@ -137,7 +137,7 @@ export default function Home({data}) {
 
 </button>
 {isSubmited ?
-  <h4 className=" w-full pt-4 text-lg md:text-3xl  text-slate-700 text-transparent bg-clip-text bg-gradient-to-r to-[#7a6ded] from-purple-500">You have Submited the form. We will contact you shortly.
+  <h4 className=" w-full pt-4 text-lg md:text-3xl  text-slate-700 text-transparent bg-clip-text bg-gradient-to-r to-[#7a6ded] from-purple-500">You have Submitted the form. We will contact you shortly.
 </h4>
 : null}
 </div>

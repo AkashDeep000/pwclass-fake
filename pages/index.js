@@ -51,9 +51,9 @@ alt=""
 priority
 />
 </div>
-<h2 className="p-8 pt-12 text-3xl font-bold  text-slate-700 ">
+<h2 className="p-8 md:pr-2 pt-12 text-3xl font-bold  text-slate-700 ">
 Most <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">affordable</span>
-<br/>coching center that<br/>cares about you.
+<br/>coaching center that<br/>cares about you.
 </h2>
   </div>  
   
@@ -69,7 +69,7 @@ Most <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple
 </div>
 
 <button onClick={handleSubmit} className="mt-5 p-3 text-white shadow-[0_0_.4rem_rgba(0,25,49,0.071)] bg-gradient-to-r from-[#7a6ded] to-purple-500 rounded font-bold text-xl">
-Sedule Now
+Schedule Now
 </button>
 
 </div>
@@ -113,7 +113,7 @@ priority
 
 <h2 className=" p-8 pt-12 text-2xl font-bold  text-slate-700 ">
 Book our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Offline</span>
-<br/>course at coching centre.<br/>
+<br/>course at the coaching centre.<br/>
 <span className="text-sm">Namkhana, South 24 Parganas</span>
 <Link href="/shedule">
 <button className="mt-5 p-3 text-white shadow-[0_0_.4rem_rgba(0,25,49,0.071)] bg-gradient-to-r from-[#7a6ded] to-purple-500 rounded font-bold text-xl">
@@ -141,7 +141,7 @@ priority
 <h2 className="p-8 pt-12 text-2xl font-bold  text-slate-700 md:order-1">
 Buy our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Online</span>
 <br/>course to study from anywhere.<br/>
-<span className="text-sm">Recoarded video and Live class on video call</span><br/>
+<span className="text-sm">Recorded video and Live class on video call</span><br/>
 <Link href="/shedule">
 <button className="mt-5 p-3 text-white shadow-[0_0_.4rem_rgba(0,25,49,0.071)] bg-gradient-to-r from-[#7a6ded] to-purple-500 rounded font-bold text-xl">
 Buy Mow

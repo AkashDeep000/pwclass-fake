@@ -23,7 +23,7 @@ We provide offline and online classes for Class 11th, 12th, JEE, NEET preparatio
 PWclass aims at providing quality education to every student regardless of their financial condition at an affordable price. Live classes offline or online, test series, lecture notes, topic wise assignments with best questions, dynamic exercises and much additional.
 <br/>
 <br/>
-We believe that Quality education also could be affordable.
+We believe that Quality education could also be affordable.
 </p>
   </div>  
   </div>
