@@ -115,6 +115,7 @@ priority
 Book our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Offline</span>
 <br/>course at the coaching centre.<br/>
 <span className="text-sm">Namkhana, South 24 Parganas</span>
+<br/>
 <Link href="/schedule">
 <button className="mt-5 p-3 text-white shadow-[0_0_.4rem_rgba(0,25,49,0.071)] bg-gradient-to-r from-[#7a6ded] to-purple-500 rounded font-bold text-xl">
 Book Mow
@@ -142,6 +143,7 @@ priority
 Buy our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Online</span>
 <br/>course to study from anywhere.<br/>
 <span className="text-sm">Recorded video and Live class on video call</span><br/>
+
 <Link href="/schedule">
 <button className="mt-5 p-3 text-white shadow-[0_0_.4rem_rgba(0,25,49,0.071)] bg-gradient-to-r from-[#7a6ded] to-purple-500 rounded font-bold text-xl">
 Buy Mow
