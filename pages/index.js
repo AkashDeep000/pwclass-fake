@@ -53,7 +53,7 @@ priority
 </div>
 <h2 className="p-8 md:pr-2 pt-12 text-3xl font-bold  text-slate-700 ">
 Most <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">affordable</span>
-<br/>coaching center that<br/>cares about you.
+<br/>coaching centre that<br/>cares about you.
 </h2>
   </div>  
   
